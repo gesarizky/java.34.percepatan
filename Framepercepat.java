@@ -1,4 +1,6 @@
 
+import java.awt.event.KeyEvent;
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 /*
@@ -45,6 +47,7 @@ public class Framepercepat extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         outa = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -53,38 +56,62 @@ public class Framepercepat extends javax.swing.JFrame {
         jLabel1.setText("KALKULATOR RUMUS PERCEPATAN");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel2.setText("Isikan data kecepatan awal , kecepatan akhir, waktu awal dan waktu akhir sesuaikan satuan.");
+        jLabel2.setText("Isi data kecepatan awal , kecepatan akhir, waktu awal dan waktu akhir");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("Kecepatan Awal ");
 
+        inv1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         inv1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inv1ActionPerformed(evt);
             }
         });
+        inv1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                inv1KeyTyped(evt);
+            }
+        });
 
+        inv2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         inv2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inv2ActionPerformed(evt);
+            }
+        });
+        inv2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                inv2KeyTyped(evt);
             }
         });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setText("Kecepatan Akhir");
 
+        int1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         int1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 int1ActionPerformed(evt);
+            }
+        });
+        int1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                int1KeyTyped(evt);
             }
         });
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setText("Waktu Awal");
 
+        int2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         int2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 int2ActionPerformed(evt);
+            }
+        });
+        int2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                int2KeyTyped(evt);
             }
         });
 
@@ -95,16 +122,19 @@ public class Framepercepat extends javax.swing.JFrame {
         jLabel7.setText("Hasilnya :");
 
         outselv.setEditable(false);
+        outselv.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel8.setText("Perubahan Kecepatan");
 
         outselt.setEditable(false);
+        outselt.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel9.setText("Selang Waktu");
 
         outa.setEditable(false);
+        outa.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel10.setText("Percepatan");
@@ -115,8 +145,12 @@ public class Framepercepat extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(jLabel1)
+                .addContainerGap(152, Short.MAX_VALUE))
+            .addComponent(jSeparator1)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
                     .addComponent(jLabel2)
                     .addComponent(jLabel7)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -148,7 +182,7 @@ public class Framepercepat extends javax.swing.JFrame {
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(inv2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(int1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,8 +190,10 @@ public class Framepercepat extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addGap(14, 14, 14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(inv1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -173,9 +209,9 @@ public class Framepercepat extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(int2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(outselv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -187,7 +223,7 @@ public class Framepercepat extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(outa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -195,15 +231,11 @@ public class Framepercepat extends javax.swing.JFrame {
 
     private void int2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_int2ActionPerformed
         // TODO add your handling code here:
-        if (inv1.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "isi semua data");
-        } else if (inv2.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "isi semua data");
-        } else if (int1.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "isi semua data");
-        } else if (int2.getText().equals("")) {
+        if (inv1.getText().equals("") || inv2.getText().equals("") || int1.getText().equals("") || int2.getText().equals("")) {
+            getToolkit().beep();
             JOptionPane.showMessageDialog(null, "isi semua data");
         } else {
+            DecimalFormat df = new DecimalFormat("#.##");
             String teksv1 = inv1.getText();
             double inputv1 = Double.parseDouble(teksv1);
             String teksv2 = inv2.getText();
@@ -213,28 +245,24 @@ public class Framepercepat extends javax.swing.JFrame {
             String tekst2 = int2.getText();
             double inputt2 = Double.parseDouble(tekst2);
             double hasilselv = inputv2 - inputv1;
-            String outputselv = String.valueOf(hasilselv);
+            String outputselv = df.format(hasilselv);
             outselv.setText(outputselv);
             double hasilselt = inputt2 - inputt1;
-            String outputselt = String.valueOf(hasilselt);
+            String outputselt = df.format(hasilselt);
             outselt.setText(outputselt);
             double hasila = hasilselv / hasilselt;
-            String outputa = String.valueOf(hasila);
+            String outputa = df.format(hasila);
             outa.setText(outputa);
         }
     }//GEN-LAST:event_int2ActionPerformed
 
     private void inv1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inv1ActionPerformed
         // TODO add your handling code here:
-        if (inv1.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "isi semua data");
-        } else if (inv2.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "isi semua data");
-        } else if (int1.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "isi semua data");
-        } else if (int2.getText().equals("")) {
+        if (inv1.getText().equals("") || inv2.getText().equals("") || int1.getText().equals("") || int2.getText().equals("")) {
+            getToolkit().beep();
             JOptionPane.showMessageDialog(null, "isi semua data");
         } else {
+            DecimalFormat df = new DecimalFormat("#.##");
             String teksv1 = inv1.getText();
             double inputv1 = Double.parseDouble(teksv1);
             String teksv2 = inv2.getText();
@@ -244,28 +272,24 @@ public class Framepercepat extends javax.swing.JFrame {
             String tekst2 = int2.getText();
             double inputt2 = Double.parseDouble(tekst2);
             double hasilselv = inputv2 - inputv1;
-            String outputselv = String.valueOf(hasilselv);
+            String outputselv = df.format(hasilselv);
             outselv.setText(outputselv);
             double hasilselt = inputt2 - inputt1;
-            String outputselt = String.valueOf(hasilselt);
+            String outputselt = df.format(hasilselt);
             outselt.setText(outputselt);
             double hasila = hasilselv / hasilselt;
-            String outputa = String.valueOf(hasila);
+            String outputa = df.format(hasila);
             outa.setText(outputa);
         }
     }//GEN-LAST:event_inv1ActionPerformed
 
     private void inv2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inv2ActionPerformed
         // TODO add your handling code here:
-        if (inv1.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "isi semua data");
-        } else if (inv2.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "isi semua data");
-        } else if (int1.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "isi semua data");
-        } else if (int2.getText().equals("")) {
+        if (inv1.getText().equals("") || inv2.getText().equals("") || int1.getText().equals("") || int2.getText().equals("")) {
+            getToolkit().beep();
             JOptionPane.showMessageDialog(null, "isi semua data");
         } else {
+            DecimalFormat df = new DecimalFormat("#.##");
             String teksv1 = inv1.getText();
             double inputv1 = Double.parseDouble(teksv1);
             String teksv2 = inv2.getText();
@@ -275,28 +299,24 @@ public class Framepercepat extends javax.swing.JFrame {
             String tekst2 = int2.getText();
             double inputt2 = Double.parseDouble(tekst2);
             double hasilselv = inputv2 - inputv1;
-            String outputselv = String.valueOf(hasilselv);
+            String outputselv = df.format(hasilselv);
             outselv.setText(outputselv);
             double hasilselt = inputt2 - inputt1;
-            String outputselt = String.valueOf(hasilselt);
+            String outputselt = df.format(hasilselt);
             outselt.setText(outputselt);
             double hasila = hasilselv / hasilselt;
-            String outputa = String.valueOf(hasila);
+            String outputa = df.format(hasila);
             outa.setText(outputa);
         }
     }//GEN-LAST:event_inv2ActionPerformed
 
     private void int1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_int1ActionPerformed
         // TODO add your handling code here:
-        if (inv1.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "isi semua data");
-        } else if (inv2.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "isi semua data");
-        } else if (int1.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "isi semua data");
-        } else if (int2.getText().equals("")) {
+        if (inv1.getText().equals("") || inv2.getText().equals("") || int1.getText().equals("") || int2.getText().equals("")) {
+            getToolkit().beep();
             JOptionPane.showMessageDialog(null, "isi semua data");
         } else {
+            DecimalFormat df = new DecimalFormat("#.##");
             String teksv1 = inv1.getText();
             double inputv1 = Double.parseDouble(teksv1);
             String teksv2 = inv2.getText();
@@ -306,16 +326,48 @@ public class Framepercepat extends javax.swing.JFrame {
             String tekst2 = int2.getText();
             double inputt2 = Double.parseDouble(tekst2);
             double hasilselv = inputv2 - inputv1;
-            String outputselv = String.valueOf(hasilselv);
+            String outputselv = df.format(hasilselv);
             outselv.setText(outputselv);
             double hasilselt = inputt2 - inputt1;
-            String outputselt = String.valueOf(hasilselt);
+            String outputselt = df.format(hasilselt);
             outselt.setText(outputselt);
             double hasila = hasilselv / hasilselt;
-            String outputa = String.valueOf(hasila);
+            String outputa = df.format(hasila);
             outa.setText(outputa);
         }
     }//GEN-LAST:event_int1ActionPerformed
+
+    private void inv1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_inv1KeyTyped
+        // TODO add your handling code here:
+        char karakter = evt.getKeyChar();
+        if (!(((karakter >= '0') && (karakter <= '9') || (karakter == KeyEvent.VK_BACK_SPACE) || (karakter == KeyEvent.VK_DELETE) || (karakter == '.')))) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_inv1KeyTyped
+
+    private void inv2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_inv2KeyTyped
+        // TODO add your handling code here:
+        char karakter = evt.getKeyChar();
+        if (!(((karakter >= '0') && (karakter <= '9') || (karakter == KeyEvent.VK_BACK_SPACE) || (karakter == KeyEvent.VK_DELETE) || (karakter == '.')))) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_inv2KeyTyped
+
+    private void int1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_int1KeyTyped
+        // TODO add your handling code here:
+        char karakter = evt.getKeyChar();
+        if (!(((karakter >= '0') && (karakter <= '9') || (karakter == KeyEvent.VK_BACK_SPACE) || (karakter == KeyEvent.VK_DELETE) || (karakter == '.')))) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_int1KeyTyped
+
+    private void int2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_int2KeyTyped
+        // TODO add your handling code here:
+        char karakter = evt.getKeyChar();
+        if (!(((karakter >= '0') && (karakter <= '9') || (karakter == KeyEvent.VK_BACK_SPACE) || (karakter == KeyEvent.VK_DELETE) || (karakter == '.')))) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_int2KeyTyped
 
     /**
      * @param args the command line arguments
@@ -367,6 +419,7 @@ public class Framepercepat extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField outa;
     private javax.swing.JTextField outselt;
     private javax.swing.JTextField outselv;
